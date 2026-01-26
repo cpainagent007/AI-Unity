@@ -1,5 +1,76 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2703162403330430577
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1548375792282946426}
+  - component: {fileID: 846024091459920511}
+  - component: {fileID: 6217252930710456902}
+  m_Layer: 6
+  m_Name: Perception
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1548375792282946426
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2703162403330430577}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.687, z: 0.441}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4198075605658284106}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &846024091459920511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2703162403330430577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0aae54b631426c4a81a2bcdf4295a20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RaycastPerception
+  info: Seek
+  tagName: Agent02
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  maxDistance: 5
+  maxAngle: 180
+--- !u!114 &6217252930710456902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2703162403330430577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0aae54b631426c4a81a2bcdf4295a20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RaycastPerception
+  info: Flock
+  tagName: Agent01
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  maxDistance: 5
+  maxAngle: 180
 --- !u!1 &3301387452025863660
 GameObject:
   m_ObjectHideFlags: 0
@@ -14,8 +85,9 @@ GameObject:
   - component: {fileID: 2994851231989212227}
   - component: {fileID: 223327093415056918}
   - component: {fileID: 3507053911589707033}
+  - component: {fileID: -8211675632691351440}
   - component: {fileID: 6374171014004715261}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: AIAgent01
   m_TagString: Agent01
   m_Icon: {fileID: 0}
@@ -36,6 +108,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 289516806312285251}
+  - {fileID: 1548375792282946426}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8437408186763718873
@@ -128,12 +201,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528f069adb6fd234784733f942cf8f16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AutonomousAgent
-  wanderRadius: 1
-  wanderDistance: 1
-  wanderDisplacement: 10
   movement: {fileID: 6374171014004715261}
   seekPerception: {fileID: 3507053911589707033}
   fleePerception: {fileID: 0}
+  flockPerception: {fileID: -8211675632691351440}
+  wanderRadius: 1
+  wanderDistance: 1
+  wanderDisplacement: 1
+  cohesionWeight: 1
+  separationWeight: 1
+  alignmentWeight: 1
+  separationRadius: 1
 --- !u!114 &3507053911589707033
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -148,6 +226,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DistancePerception
   info: Seek
   tagName: Agent02
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  maxDistance: 5
+  maxAngle: 180
+--- !u!114 &-8211675632691351440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3301387452025863660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b812a7b7842f6fa458e380174000475e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DistancePerception
+  info: Flock
+  tagName: Agent01
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 64
   maxDistance: 5
   maxAngle: 180
 --- !u!114 &6374171014004715261
@@ -172,9 +272,65 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4198075605658284106}
     m_Modifications:
+    - target: {fileID: 646311483335002611, guid: 5b5c678f31981e34f9122b87217da1ac, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 713487961007682089, guid: 5b5c678f31981e34f9122b87217da1ac, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1540764272955530729, guid: 5b5c678f31981e34f9122b87217da1ac, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1675064253458161135, guid: 5b5c678f31981e34f9122b87217da1ac, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2120652480286563868, guid: 5b5c678f31981e34f9122b87217da1ac, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3180078406226379126, guid: 5b5c678f31981e34f9122b87217da1ac, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3874001824228926733, guid: 5b5c678f31981e34f9122b87217da1ac, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4807929556901506227, guid: 5b5c678f31981e34f9122b87217da1ac, type: 3}
       propertyPath: m_Name
       value: Taipan
+      objectReference: {fileID: 0}
+    - target: {fileID: 4807929556901506227, guid: 5b5c678f31981e34f9122b87217da1ac, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5062559287153234616, guid: 5b5c678f31981e34f9122b87217da1ac, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5186593717914452053, guid: 5b5c678f31981e34f9122b87217da1ac, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7200267351907499837, guid: 5b5c678f31981e34f9122b87217da1ac, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7350491214208503536, guid: 5b5c678f31981e34f9122b87217da1ac, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7950655511589643476, guid: 5b5c678f31981e34f9122b87217da1ac, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8419645418327121946, guid: 5b5c678f31981e34f9122b87217da1ac, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8999338503545881367, guid: 5b5c678f31981e34f9122b87217da1ac, type: 3}
       propertyPath: m_LocalPosition.x
