@@ -1,10 +1,13 @@
 using System;
-using System.Drawing;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public static class Utilities
 {
+    public static Color white = new(1, 1, 1, 0.5f);
+    public static Color green = new(0, 1, 0, 0.5f);
+    public static Color red = new(1, 0, 0, 0.5f);
+    public static Color blue = new(0, 0, 1, 0.5f);
+
     public static float Wrap(float v, float min, float max)
     {
         // ensure min <= max by swapping if needed
