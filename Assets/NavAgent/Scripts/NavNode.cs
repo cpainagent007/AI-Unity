@@ -6,20 +6,22 @@ public class NavNode : MonoBehaviour
     [SerializeField] protected List<NavNode> neighbors;
 
     public List<NavNode> Neighbors { get { return neighbors; } set { neighbors = value; } }
+    public float Cost { get; set; } = 0;
+    public NavNode PreviousNavNode { get; set; } = null;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.TryGetComponent<NavAgent>(out NavAgent agent))
+        if (other.gameObject.TryGetComponent<NavPathMovement>(out NavPathMovement navMovement))
         {
-            agent.OnEnterNavNode(this);
+            navMovement.OnEnterNavNode(this);
         }
     }
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.TryGetComponent<NavAgent>(out NavAgent agent))
+        if (other.gameObject.TryGetComponent<NavPathMovement>(out NavPathMovement navMovement))
         {
-            agent.OnEnterNavNode(this);
+            navMovement.OnEnterNavNode(this);
         }
     }
 
@@ -62,6 +64,26 @@ public class NavNode : MonoBehaviour
         }
 
         return nearestNavNode;
+    }
+
+    public static void ResetNavNodes()
+    {
+        var navNodes = GetAllNavNodes();
+        foreach (var navNode in navNodes)
+        {
+            navNode.Cost = float.MaxValue;
+            navNode.PreviousNavNode = null;
+        }
+    }
+
+    public static void CreatePath(NavNode navNode, ref List<NavNode> path)
+    {
+        while(navNode != null)
+        {
+            path.Add(navNode);
+            navNode = navNode.PreviousNavNode;
+        }
+        path.Reverse();
     }
 
     #endregion

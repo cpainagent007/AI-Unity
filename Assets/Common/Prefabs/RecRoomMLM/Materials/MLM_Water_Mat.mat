@@ -1,0 +1,205 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: MLM_Water_Mat
+  m_Shader: {fileID: 4800000, guid: 93db072dbeca48ce90d9b3416815e981, type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - _EMISSION
+  - _NORMALMAP
+  - _SPECULAR_SETUP
+  m_LightmapFlags: 0
+  m_EnableInstancingVariants: 1
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 3003
+  stringTagMap: {}
+  disabledShaderPasses:
+  - DepthOnly
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BaseMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BumpMap:
+        m_Texture: {fileID: 2800000, guid: a8d73b24c2919cf40b2d4e19415957ea, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BumpMap2:
+        m_Texture: {fileID: 2800000, guid: 0cbd651912134f44b9494105a7929389, type: 3}
+        m_Scale: {x: 0.2, y: 0.2}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _FoamTex:
+        m_Texture: {fileID: 2800000, guid: 6666fab2fa674d0dbb4e6014a045465f, type: 3}
+        m_Scale: {x: 0.8, y: 0.8}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Normal1:
+        m_Texture: {fileID: 2800000, guid: 036ba979857b8f048a80b0b8d15f9d8a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Normal2:
+        m_Texture: {fileID: 2800000, guid: 38a68f55943b5274d9269966a0a631ff, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SpecGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Specular:
+        m_Texture: {fileID: 2800000, guid: f3b5d12f3e9021146a202a6a5a71a3c2, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _AlphaClip: 0
+    - _Base: 0.2
+    - _BatchOffset: 0
+    - _Blend: 0
+    - _BumpAmt: 26.5
+    - _BumpScale: 0.5
+    - _BumpScale2: 0.2
+    - _ClearCoatMask: 0
+    - _ClearCoatSmoothness: 0
+    - _Cull: 2
+    - _Cutoff: 0.5
+    - _Depth: 0.23
+    - _DepthColorStrength: 0.8
+    - _DepthDistance: 0.26
+    - _DetailAlbedoMapScale: 1
+    - _DetailNormalMapScale: 1
+    - _Distortion: 0.06
+    - _DstBlend: 0
+    - _EdgeDistance: 0.15
+    - _EdgeMultiply: 1
+    - _EmissivePower: 0
+    - _EnvironmentReflections: 1
+    - _FarRange: 100
+    - _FastModeShading: 0
+    - _FoamClip: 0.437
+    - _FoamMaxDepthInverse: 0.19379845
+    - _FoamMinDepthInverse: 7.142857
+    - _FoamSmoothness: 0.88
+    - _Gloss: 0.05
+    - _GlossMapScale: 1
+    - _Glossiness: 0
+    - _GlossyReflections: 1
+    - _InvFade: 1
+    - _LightWrap: 0
+    - _Metallic: 0
+    - _Mode: 0
+    - _NearRange: 10
+    - _NormalPowerFar: 0.4
+    - _NormalPowerNear: 0.1
+    - _NormalTiling1: 0.09
+    - _NormalTiling2: 0.12
+    - _OcclusionStrength: 1
+    - _Opacity: 1
+    - _Parallax: 0.02
+    - _QueueOffset: 3
+    - _ReceiveShadows: 1
+    - _RefractionPower: 0.44
+    - _Roughness: 0.34
+    - _ShoreFadeMax: 1
+    - _ShoreFadeMin: 0.087
+    - _ShoreFadeRange: 1.15
+    - _Smoothness: 0.895
+    - _SmoothnessTextureChannel: 0
+    - _Specular: 0
+    - _SpecularHighlights: 1
+    - _SpecularTiling: 0.2
+    - _SrcBlend: 1
+    - _Surface: 0
+    - _SurfaceFadeDepthInverse: 5.263158
+    - _UVScale: 10
+    - _UVSec: 0
+    - _UV_Scale: 0.95
+    - _UseColorOffset: 0
+    - _UseGlossMap: 1
+    - _WorkflowMode: 0
+    - _ZWrite: 0
+    - _node_1408: 0
+    - _node_5060: 10
+    - _node_9187: 0.11
+    - _node_9187_copy: 4.18
+    m_Colors:
+    - _Animation: {r: -0.23, g: -0.66, b: -0.15, a: -0.123}
+    - _BaseColor: {r: 0.23529407, g: 0.5671373, b: 0.67058825, a: 0.83137256}
+    - _BaseTextureScrollDirection: {r: 0, g: 0, b: 0, a: 0}
+    - _BaseTextureScrollSource: {r: 0, g: 0, b: 0, a: 0}
+    - _BumpScrollDirection: {r: 0.065, g: 0, b: -2.1855694e-10, a: 0.005}
+    - _BumpScrollDirection2: {r: 0.04, g: 0, b: 0, a: 0}
+    - _BumpScrollSource: {r: 0, g: 0.065, b: 90, a: 0.005}
+    - _BumpScrollSource2: {r: 0, g: 0.04, b: 0, a: 0}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color1: {r: 0.53400004, g: 0.7112627, b: 1, a: 1}
+    - _Color2: {r: 0, g: 0.37931037, b: 1, a: 1}
+    - _Color_Tint: {r: 1, g: 1, b: 1, a: 1}
+    - _DepthColor: {r: 0.110415, g: 0.30043072, b: 0.433, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _FoamColor: {r: 1, g: 1, b: 1, a: 0.4117647}
+    - _FoamScrollDirection: {r: 0.1, g: 0, b: 0, a: 0}
+    - _FoamScrollSource: {r: 0, g: 0.1, b: 45, a: 0}
+    - _SpecColor: {r: 0.14161962, g: 0.23159854, b: 0.2627451, a: 1}
+    - _SurfaceColor: {r: 0.517647, g: 0.3568626, b: 0.24705869, a: 1}
+    - _TintColor: {r: 1, g: 1, b: 1, a: 0.5882353}
+    - _UrpVersionSavedAt: {r: 7, g: 3, b: 1, a: 0}
+    - _UrpVersionTarget: {r: 7, g: 3, b: 1, a: 0}
+    - _Wave1Params: {r: -0.00000004371139, g: 1, b: 1.2566371, a: 0.1}
+    - _Wave2Params: {r: 0.70710677, g: 0.70710677, b: 34.906586, a: 0.02}
+    - _Wave3Params: {r: 1, g: 0, b: 1, a: 0}
+    - _WaveAngleSource: {r: 90, g: 45, b: 0, a: 0}
+    - _WaveExtraParams: {r: 0.2, g: 0.01, b: 0, a: 0}
+    - _node_6455: {r: 0.14868078, g: 0.15399408, b: 0.9191176, a: 1}
+    - _node_7114: {r: 0.06179715, g: 0.17606258, b: 0.9338235, a: 1}
+  m_BuildTextureStacks: []
