@@ -2,22 +2,17 @@ using UnityEngine;
 
 public class StateAgent : AIAgent
 {
-    enum State
-    {
-        Idle,
-        Patrol,
-        Chase,
-        Flee,
-        Attack,
-        Death
-    }
 
     public Movement movement;
     public Perception perception;
+    public Animator animator;
 
-    [SerializeField] State state;
     [Header("Parameters")]
+    [SerializeField] public float maxHealth = 100.0f;
+    [SerializeField] public float attackRange = 2.0f;
+    [SerializeField] public float attackDamage = 10.0f;
     public float timer;
+    public float health;
     public float distanceToDestination;
     public AIAgent enemy;
 
@@ -31,9 +26,11 @@ public class StateAgent : AIAgent
 
     private void Start()
     {
-        state = State.Idle;
-        timer = 2.0f;
-
+        health = maxHealth;
+        StateMachine.AddState(new AIAttackState(this));
+        StateMachine.AddState(new AIChaseState(this));
+        StateMachine.AddState(new AIDamageState(this));
+        StateMachine.AddState(new AIDeathState(this));
         StateMachine.AddState(new AIIdleState(this));
         StateMachine.AddState(new AIPatrolState(this));
 
@@ -44,53 +41,6 @@ public class StateAgent : AIAgent
     {
         UpdateParameters();
         StateMachine.Update();
-
-        /*
-        switch (state)
-        {
-            case State.Idle:
-                if (timer <= 0)
-                {
-                    state = State.Patrol;
-                    Destination = NavNode.GetRandomNavNode().transform.position;
-                }
-                if (enemy != null)
-                {
-                    state = State.Chase;
-                }
-                break;
-            case State.Patrol:
-                if (distanceToDestination <= 0.5f)
-                {
-                    state = State.Idle;
-                    timer = Random.Range(2.0f, 4.0f);
-                }
-                if (enemy != null)
-                {
-                    state = State.Chase;
-                }
-                break;
-            case State.Chase:
-                if (enemy != null)
-                {
-                    Destination = enemy.transform.position;
-                }
-                else
-                {
-                    state = State.Idle;
-                    timer = Random.Range(1.0f, 2.5f);
-                }
-                    break;
-            case State.Flee:
-                break;
-            case State.Attack:
-                break;
-            case State.Death:
-                break;
-            default:
-                break;
-        }
-        */
     }
 
     private void UpdateParameters()
@@ -108,6 +58,19 @@ public class StateAgent : AIAgent
         else
         {
             enemy = null;
+        }
+    }
+
+    public void OnDamage(float damage)
+    {
+        health -= damage;
+        if (health <= 0)
+        {
+            StateMachine.SetState<AIDeathState>();
+        }
+        else
+        {
+            StateMachine.SetState<AIDamageState>();
         }
     }
 }

@@ -22,5 +22,10 @@ public class AIPatrolState : AIState
         {
             agent.StateMachine.SetState<AIIdleState>();
         }
+
+        if (agent.enemy != null)
+        {
+            agent.StateMachine.SetState<AIChaseState>();
+        }
     }
 }

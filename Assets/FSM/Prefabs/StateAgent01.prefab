@@ -161,9 +161,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::StateAgent
   movement: {fileID: -1092789682264020781}
   perception: {fileID: 2263402289157493745}
-  state: 0
+  animator: {fileID: 8030989379909252354}
+  maxHealth: 100
+  attackRange: 2
+  attackDamage: 10
   timer: 0
+  health: 0
   distanceToDestination: 0
+  enemy: {fileID: -791609938059090566, guid: 5d6282267e3b8cc4697d24d1af6acac3, type: 3}
 --- !u!195 &-3571231801460787237
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -610,5 +615,10 @@ PrefabInstance:
 --- !u!4 &6505302976692770660 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2486386357567141152, guid: d769c2dee13fd3d409df0f98252546bf, type: 3}
+  m_PrefabInstance: {fileID: 8702662774250725956}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &8030989379909252354 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1708517811440457542, guid: d769c2dee13fd3d409df0f98252546bf, type: 3}
   m_PrefabInstance: {fileID: 8702662774250725956}
   m_PrefabAsset: {fileID: 0}
